@@ -46,7 +46,7 @@ const aiTools = [
   {title:"CAPA recommendation", text:"Propose corrective and preventive actions", icon:Sparkles},
 ];
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "https://aivoa-complaint-intelligence.onrender.com";
 
 type BackendComplaint = { id: number; complaint_no?: string; product: string; strength?: string; batch: string; customer: string; complaint_type: string; created_at?: string; severity: Severity; status: Status; description: string; };
 
