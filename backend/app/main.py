@@ -99,6 +99,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+@app.head("/")
+def root():
+    return {"status": "ok", "service": "aivoa-api"}
+
 @app.get("/health")
 def health():
     return {"status": "ok", "service": "aivoa-api"}
