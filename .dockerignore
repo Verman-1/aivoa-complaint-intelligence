@@ -1,0 +1,9 @@
+node_modules
+.git
+.gitignore
+backend/.venv
+backend/app/aivoa.db
+backend/app/__pycache__
+.wrangler
+dist
+*.log

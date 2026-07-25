@@ -18,5 +18,14 @@ services:
       - "8000:8000"
     depends_on:
       - db
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - api
 volumes:
   aivoa_data:
+
