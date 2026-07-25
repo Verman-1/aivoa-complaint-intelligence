@@ -91,9 +91,13 @@ async def lifespan(_: FastAPI):
     yield
 
 app = FastAPI(title="AIVOA Complaint Intelligence API", version="1.0.0", lifespan=lifespan)
+cors_list = [x.strip() for x in settings.cors_origins.split(",") if x.strip()]
+if "*" in cors_list or not cors_list:
+    cors_list = ["*"]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[x.strip() for x in settings.cors_origins.split(",")],
+    allow_origins=cors_list,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
